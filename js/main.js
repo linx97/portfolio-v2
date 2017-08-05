@@ -1,7 +1,5 @@
 $(document).ready(function() {
 	function yScroll() {
-		var leftH = 89;
-		var rightH = 62;
 		var yPos = window.pageYOffset;
 		// if(yPos < 330) {
 		// 	$(document).mousemove(function(event) {
@@ -25,6 +23,9 @@ $(document).ready(function() {
 
 		// 	});
 		// }
+
+		var leftH = 89;
+		var rightH = 62;
 		var left = leftH + (yPos / leftH) * 3.5;
 		var right = rightH + (yPos / rightH) * 3.5;
 		if (yPos > 100) {
@@ -33,6 +34,19 @@ $(document).ready(function() {
 			} else if(right < 100){
 				$('#polygon').css(`clip-path`, `polygon(0 100%, 100% ${right}%, 100% 100%, 0% 100%)`);
 			}
+		}
+
+		if (yPos > 500){
+			var startH = 50;
+			var wRightHeight = startH + ((yPos - 500) / startH) * 8.5;
+			// var startW = 104;
+			// var wLeftWidth = startW + ((yPos - 600) / startW) * 13.5;
+			if(wRightHeight < 94) {
+				$('#triangle-right').css('height', `${wRightHeight}%`);
+			}
+			// if(wLeftWidth < 147) {
+			// 	$('#triangle-left').css('width', `${wLeftWidth}%`);
+			// }
 		}
 	}
 	window.addEventListener("scroll", yScroll);
