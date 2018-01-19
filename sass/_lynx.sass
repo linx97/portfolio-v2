@@ -1,15 +1,13 @@
-$colorsAnimation: 8s infinite
-
 .frame 
-  position: absolute
   height: 97vh
   width: 85.5vh
-  left: 7%
+  position: absolute
+  left: 5%
   -webkit-perspective: 1000
 
 .head 
   height: 100%
-  width: 99.7%
+  width: 99.9%
   -webkit-transform-style: preserve-3d
 
 .head > div 
@@ -64,14 +62,18 @@ $colorsAnimation: 8s infinite
   background: url('../img/l1.png') no-repeat
   -webkit-transform: translateZ(45px)
 
-.l0 
+.l0
   background: url('../img/l0.png') no-repeat
+  -webkit-transform: translateZ(50px)
+
+.necklace-svg
   -webkit-transform: translateZ(50px)
 
 .l7 
   div
     height: 3px
     width:  3px
+    opacity: 0.8
   .circle:nth-child(1), .circle:nth-child(23) 
     top: 12.6%
     left: 21.2%
@@ -310,11 +312,11 @@ $colorsAnimation: 8s infinite
 
 .l5 .triangle-2 
   top: 48.2%
-  animation: colors $colorsAnimation
+  animation: colors-six $colorsAnimation
 
 .l5 .triangle-3 
   top: 50.2%
-  animation: colors-four $colorsAnimation
+  animation: colors-five $colorsAnimation
 
 .l5 .triangle-4 
   top: 52.2%
@@ -382,7 +384,7 @@ $colorsAnimation: 8s infinite
 
 .l1 div
   opacity: 0.6
-  height: 1.3%
+  height: 1.1%
   width: 1.3%
   -webkit-clip-path: polygon(20% 100%, 0 0, 100% 20%)
   clip-path: polygon(20% 100%, 0 0, 100% 20%)
@@ -466,9 +468,9 @@ $colorsAnimation: 8s infinite
 
 .necklace-svg svg
   position: absolute
-  top: 77%
-  width: 70%
-  left: 15%
+  top: 76%
+  width: 62%
+  left: 19%
 
 #necklace path
   animation: fillup $colorsAnimation

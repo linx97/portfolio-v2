@@ -1,28 +1,27 @@
 $(document).ready(function() {
+	$(document).mousemove(function(event) {
+		cx = Math.ceil($(window).width() / 1.8);
+		cy = Math.ceil($(window).height() / 1.8);
+		dx = event.pageX - cx;
+		dy = event.pageY - cy;
+
+		var tiltx;
+		if(dy < 310) {
+			tiltx = (dy / cy);
+		} else {
+			tiltx = (310 / cy);
+		}
+		tilty = -(dx / cx);
+		radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2));
+		degree = (radius * 20);
+
+		$('#head').css('-webkit-transform', 'rotate3d(' + -tiltx + ', ' + -tilty + ', 0, ' + degree + 'deg)');
+		$('#head').css('transform', 'rotate3d(' + -tiltx + ', ' + -tilty + ', 0, ' + degree + 'deg)');
+
+	});
+
 	function yScroll() {
 		var yPos = window.pageYOffset;
-		// if(yPos < 330) {
-		// 	$(document).mousemove(function(event) {
-		// 	  cx = Math.ceil($(window).width() / 1.8);
-		// 	  cy = Math.ceil($(window).height() / 1.8);
-		// 	  dx = event.pageX - cx;
-		// 	  dy = event.pageY - cy;
-
-		// 	  var tiltx;
-		// 	  if(dy < 310) {
-		// 	  	tiltx = (dy / cy);
-		// 	  } else {
-		// 	  	tiltx = (310 / cy);
-		// 	  }
-		// 	  tilty = -(dx / cx);
-		// 	  radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2));
-		// 	  degree = (radius * 20);
-
-		// 	  $('#head').css('-webkit-transform', 'rotate3d(' + -tiltx + ', ' + -tilty + ', 0, ' + degree + 'deg)');
-		// 	  $('#head').css('transform', 'rotate3d(' + -tiltx + ', ' + -tilty + ', 0, ' + degree + 'deg)');
-
-		// 	});
-		// }
 
 		var leftH = 89;
 		var rightH = 62;
