@@ -2,8 +2,9 @@ body {
   margin: 0;
   padding: 0;
   background-image: url("../img/bg.jpg");
-  font-family: Barlow, sans-serif;
+  font-family: Assistant, sans-serif;
   font-size: 14px;
+  font-weight: 300;
   letter-spacing: 3px;
   line-height: 1.3; }
 
@@ -11,6 +12,9 @@ body {
   position: relative;
   height: 100vh;
   margin-right: 40px; }
+
+.off-page {
+  right: -100px; }
 
 .title {
   position: absolute;
@@ -20,9 +24,55 @@ body {
   text-align: right;
   width: 30%; }
   .title h2 {
-    margin-top: 79%;
+    margin-top: 63%;
     border-top: 1px solid #fff;
-    padding: 17px 0 0 16px; }
+    padding: 17px 0 0 16px;
+    font-weight: 300; }
+  .title h3 {
+    position: relative; }
+    .title h3 .triangle {
+      opacity: 0.8;
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      position: absolute;
+      right: 0;
+      top: 5px;
+      -webkit-clip-path: polygon(0 0, 0% 100%, 80% 50%) !important;
+      clip-path: polygon(0 0, 0% 100%, 80% 50%) !important;
+      animation: colors-three 11s infinite;
+      -webkit-transition: all 400ms ease-in;
+      -moz-transition: all 400ms ease-in;
+      transition: all 500ms ease-in; }
+    .title h3 .triangle:first-of-type {
+      margin-left: 7px; }
+    .title h3 .triangle:nth-of-type(2) {
+      animation: colors-six 11s infinite;
+      right: 15px;
+      transition-delay: 100ms; }
+    .title h3 .triangle:nth-of-type(3) {
+      animation: colors-two 11s infinite;
+      right: 30px;
+      transition-delay: 200ms; }
+    .title h3 span {
+      margin-right: 50px; }
+      .title h3 span:hover {
+        cursor: pointer; }
+        .title h3 span:hover .triangle {
+          right: -40px; }
+        .title h3 span:hover .triangle:nth-of-type(2) {
+          right: -25px; }
+        .title h3 span:hover .triangle:nth-of-type(3) {
+          right: -10px; }
+  .title h3:first-of-type {
+    margin-top: 33%; }
+    .title h3:first-of-type .triangle:first-of-type {
+      margin-left: 7px;
+      animation: colors 11s infinite; }
+    .title h3:first-of-type .triangle:nth-of-type(2) {
+      animation: colors-six 11s infinite; }
+    .title h3:first-of-type .triangle:nth-of-type(3) {
+      animation: colors-four 11s infinite; }
   .title #name-svg {
     width: 120%;
     position: absolute;

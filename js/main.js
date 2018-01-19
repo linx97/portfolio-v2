@@ -20,33 +20,41 @@ $(document).ready(function() {
 
 	});
 
-	function yScroll() {
-		var yPos = window.pageYOffset;
-
-		var leftH = 89;
-		var rightH = 62;
-		var left = leftH + (yPos / leftH) * 3.5;
-		var right = rightH + (yPos / rightH) * 3.5;
-		if (yPos > 100) {
-			if(left < 100){
-				$('#polygon').css(`clip-path`, `polygon(0 ${left}%, 100% ${right}%, 100% 100%, 0% 100%)`);
-			} else if(right < 100){
-				$('#polygon').css(`clip-path`, `polygon(0 100%, 100% ${right}%, 100% 100%, 0% 100%)`);
-			}
+	$('.title span').click(function(){
+		var triangles = this.children;
+		for(var i = 0; i < triangles.length; i++){
+			triangles[i].style.right = '-200px';
+			triangles[i].style.opacity = 0;
 		}
+	})
 
-		if (yPos > 500){
-			var startH = 50;
-			var wRightHeight = startH + ((yPos - 500) / startH) * 8.5;
-			// var startW = 104;
-			// var wLeftWidth = startW + ((yPos - 600) / startW) * 13.5;
-			if(wRightHeight < 94) {
-				$('#triangle-right').css('height', `${wRightHeight}%`);
-			}
-			// if(wLeftWidth < 147) {
-			// 	$('#triangle-left').css('width', `${wLeftWidth}%`);
-			// }
-		}
-	}
-	window.addEventListener("scroll", yScroll);
+	// function yScroll() {
+	// 	var yPos = window.pageYOffset;
+
+	// 	var leftH = 89;
+	// 	var rightH = 62;
+	// 	var left = leftH + (yPos / leftH) * 3.5;
+	// 	var right = rightH + (yPos / rightH) * 3.5;
+	// 	if (yPos > 100) {
+	// 		if(left < 100){
+	// 			$('#polygon').css(`clip-path`, `polygon(0 ${left}%, 100% ${right}%, 100% 100%, 0% 100%)`);
+	// 		} else if(right < 100){
+	// 			$('#polygon').css(`clip-path`, `polygon(0 100%, 100% ${right}%, 100% 100%, 0% 100%)`);
+	// 		}
+	// 	}
+
+	// 	if (yPos > 500){
+	// 		var startH = 50;
+	// 		var wRightHeight = startH + ((yPos - 500) / startH) * 8.5;
+	// 		// var startW = 104;
+	// 		// var wLeftWidth = startW + ((yPos - 600) / startW) * 13.5;
+	// 		if(wRightHeight < 94) {
+	// 			$('#triangle-right').css('height', `${wRightHeight}%`);
+	// 		}
+	// 		// if(wLeftWidth < 147) {
+	// 		// 	$('#triangle-left').css('width', `${wLeftWidth}%`);
+	// 		// }
+	// 	}
+	// }
+	// window.addEventListener("scroll", yScroll);
 });
