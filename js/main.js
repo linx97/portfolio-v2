@@ -18,6 +18,8 @@ $(document).ready(function() {
 		$('#head').css('-webkit-transform', 'rotate3d(' + -tiltx + ', ' + -tilty + ', 0, ' + degree + 'deg)');
 		$('#head').css('transform', 'rotate3d(' + -tiltx + ', ' + -tilty + ', 0, ' + degree + 'deg)');
 
+		ballCoords();
+
 	});
 
 	$('.title span').click(function(){
@@ -28,33 +30,69 @@ $(document).ready(function() {
 		}
 	})
 
-	// function yScroll() {
-	// 	var yPos = window.pageYOffset;
+	setTimeout(function(){
 
-	// 	var leftH = 89;
-	// 	var rightH = 62;
-	// 	var left = leftH + (yPos / leftH) * 3.5;
-	// 	var right = rightH + (yPos / rightH) * 3.5;
-	// 	if (yPos > 100) {
-	// 		if(left < 100){
-	// 			$('#polygon').css(`clip-path`, `polygon(0 ${left}%, 100% ${right}%, 100% 100%, 0% 100%)`);
-	// 		} else if(right < 100){
-	// 			$('#polygon').css(`clip-path`, `polygon(0 100%, 100% ${right}%, 100% 100%, 0% 100%)`);
-	// 		}
-	// 	}
+		var rect1 = anime({
+		  targets: '.rect-1',
+		  translateX: '-100%',
+		  easing: 'easeInOutQuart',
+		  duration: 3000,
+		  delay: 500,
+		  direction: 'reverse'
+		});
 
-	// 	if (yPos > 500){
-	// 		var startH = 50;
-	// 		var wRightHeight = startH + ((yPos - 500) / startH) * 8.5;
-	// 		// var startW = 104;
-	// 		// var wLeftWidth = startW + ((yPos - 600) / startW) * 13.5;
-	// 		if(wRightHeight < 94) {
-	// 			$('#triangle-right').css('height', `${wRightHeight}%`);
-	// 		}
-	// 		// if(wLeftWidth < 147) {
-	// 		// 	$('#triangle-left').css('width', `${wLeftWidth}%`);
-	// 		// }
-	// 	}
-	// }
-	// window.addEventListener("scroll", yScroll);
+		var rect2 = anime({
+		  targets: '.rect-2',
+		  translateY: '100%',
+		  easing: 'easeInOutQuart',
+		  duration: 3000,
+		  delay: 1500,
+		  direction: 'reverse'
+		});
+
+		var rect3 = anime({
+		  targets: '.rect-3',
+		  translateY: '-100%',
+		  easing: 'easeInOutQuart',
+		  duration: 3000,
+		  delay: 2500,
+		  direction: 'reverse'
+		});
+
+		var rect4 = anime({
+		  targets: '.rect-4',
+		  translateY: '-100%',
+		  translateX: '100%',
+		  easing: 'easeInOutQuart',
+		  duration: 3000,
+		  delay: 3500,
+		  direction: 'reverse'
+		});
+
+	}, 2000)
+
+	var ball = $("#ball");
+
+	function ballCoords(mouseEvent) {
+	  var xpos;
+	  var ypos;
+	  
+	  if (mouseEvent) {
+	    
+	    //FireFox
+	    xpos = mouseEvent.pageX + "px";
+	    ypos = mouseEvent.pageY + "px";
+	    
+	  } else {
+	    
+	    //IE
+	    xpos = window.event.x + document.body.scrollLeft - 2;
+	    ypos = window.event.y + document.body.scrollTop - 2;
+	    
+	  }
+	  
+	  ball.css('top', ypos);
+	  ball.css('left', xpos);
+	}
+
 });
