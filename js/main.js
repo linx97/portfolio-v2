@@ -1,4 +1,28 @@
 $(document).ready(function() {
+
+	var loadingText = anime({
+	  targets: '.loading-screen p',
+	  opacity: 0,
+	  duration: 11000,
+	  delay: 9000
+	});
+
+	var loadingOne = anime({
+	  targets: '.loading-screen.one',
+	  translateX: '-100%',
+	  easing: 'easeInSine',
+	  duration: 3000,
+	  delay: 10000
+	});
+
+	var loadingOne = anime({
+	  targets: '.loading-screen.two',
+	  translateX: '100%',
+	  easing: 'easeInSine',
+	  duration: 4000,
+	  delay: 10200
+	});
+
 	$(document).mousemove(function(event) {
 		cx = Math.ceil($(window).width() / 1.8);
 		cy = Math.ceil($(window).height() / 1.8);
@@ -25,8 +49,7 @@ $(document).ready(function() {
 	$('.title span').click(function(){
 		var triangles = this.children;
 		for(var i = 0; i < triangles.length; i++){
-			triangles[i].style.right = '-200px';
-			triangles[i].style.opacity = 0;
+			triangles[i].style.right = '-300px';
 		}
 	})
 
@@ -34,7 +57,7 @@ $(document).ready(function() {
 
 		var rect1 = anime({
 		  targets: '.rect-1',
-		  translateX: '-100%',
+		  translateX: '-900%',
 		  easing: 'easeInOutQuart',
 		  duration: 3000,
 		  delay: 500,
@@ -43,33 +66,33 @@ $(document).ready(function() {
 
 		var rect2 = anime({
 		  targets: '.rect-2',
-		  translateY: '100%',
+		  translateY: '900%',
 		  easing: 'easeInOutQuart',
-		  duration: 3000,
+		  duration: 3200,
 		  delay: 1500,
 		  direction: 'reverse'
 		});
 
 		var rect3 = anime({
 		  targets: '.rect-3',
-		  translateY: '-100%',
+		  translateY: '-1000%',
 		  easing: 'easeInOutQuart',
-		  duration: 3000,
+		  duration: 3400,
 		  delay: 2500,
 		  direction: 'reverse'
 		});
 
 		var rect4 = anime({
 		  targets: '.rect-4',
-		  translateY: '-100%',
-		  translateX: '100%',
+		  translateY: '-1200%',
+		  translateX: '1200%',
 		  easing: 'easeInOutQuart',
-		  duration: 3000,
+		  duration: 3600,
 		  delay: 3500,
 		  direction: 'reverse'
 		});
 
-	}, 2000)
+	}, 143000)
 
 	var ball = $("#ball");
 
