@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+        // meaningless comment
 	var loadingText = anime({
 	  targets: '.loading-screen p, #progressbar, #loading',
 	  opacity: 0,
