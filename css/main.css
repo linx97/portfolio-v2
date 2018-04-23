@@ -24,7 +24,7 @@ body {
   position: absolute;
   z-index: 800;
   height: 100vh;
-  background: #252525;
+  background: #232323;
   width: 30%;
   color: #fff;
   font-weight: bold; }
@@ -32,8 +32,11 @@ body {
 .loading-screen:nth-of-type(2) {
   width: 70%;
   left: 30%;
-  padding-left: 15%;
+  padding-left: 10%;
   padding-top: 40vh; }
+  .loading-screen:nth-of-type(2) p {
+    width: 200px;
+    text-align: center; }
 
 .loading-dots {
   animation-name: blink;
@@ -46,6 +49,23 @@ body {
 
 .loading-dots:nth-of-type(3) {
   animation-delay: 2s; }
+
+#progressbar {
+  height: 7px;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 9px;
+  margin-top: 30px; }
+
+#loading {
+  transition: all 500ms ease;
+  height: 7px;
+  width: 200px;
+  border-radius: 9px;
+  background: #F7FF00;
+  animation: progressbar 15s linear;
+  position: absolute;
+  display: inline-block; }
 
 .landing-holder {
   position: relative;
@@ -773,3 +793,21 @@ body {
     opacity: 1; }
   100% {
     opacity: .2; } }
+
+@keyframes load {
+  0% {
+    width: 2%; }
+  10% {
+    width: 10%; } }
+
+@keyframes progressbar {
+  0% {
+    width: 0;
+    background-color: #F7FF00; }
+  16.5% {
+    background-color: #008BFF; }
+  82.5% {
+    background-color: #FF0082; }
+  100% {
+    width: 100;
+    background-color: #F7FF00; } }

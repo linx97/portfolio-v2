@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
 	var loadingText = anime({
-	  targets: '.loading-screen p',
+	  targets: '.loading-screen p, #progressbar, #loading',
 	  opacity: 0,
 	  duration: 11000,
-	  delay: 9000
+	  delay: 14700
 	});
 
 	var loadingOne = anime({
@@ -12,7 +12,7 @@ $(document).ready(function() {
 	  translateX: '-100%',
 	  easing: 'easeInSine',
 	  duration: 3000,
-	  delay: 10000
+	  delay: 15000
 	});
 
 	var loadingOne = anime({
@@ -20,7 +20,7 @@ $(document).ready(function() {
 	  translateX: '100%',
 	  easing: 'easeInSine',
 	  duration: 4000,
-	  delay: 10200
+	  delay: 15200
 	});
 
 	$(document).mousemove(function(event) {
@@ -57,42 +57,83 @@ $(document).ready(function() {
 
 		var rect1 = anime({
 		  targets: '.rect-1',
-		  translateX: '-900%',
+		  translateX: '-600%',
+		  width: {
+		    value: '+=500',
+		    duration: 5000,
+		    easing: 'easeInCirc'
+		  },
 		  easing: 'easeInOutQuart',
-		  duration: 3000,
-		  delay: 500,
-		  direction: 'reverse'
+		  duration: 5000,
+		  direction: 'reverse',
+		  begin: function(anim) {
+		    setTimeout(function(){
+		      $('.rect-1').show()
+		    }, 100)
+		  }
 		});
 
 		var rect2 = anime({
 		  targets: '.rect-2',
-		  translateY: '900%',
+		  translateY: '500%',
+		  height: {
+		    value: '+=200',
+		    duration: 6000,
+		    easing: 'easeInCirc'
+		  },
 		  easing: 'easeInOutQuart',
-		  duration: 3200,
-		  delay: 1500,
-		  direction: 'reverse'
+		  duration: 6000,
+		  direction: 'reverse',
+		  begin: function(anim) {
+		    setTimeout(function(){
+		      $('.rect-2').show()
+		    }, 100)
+		  }
 		});
 
 		var rect3 = anime({
 		  targets: '.rect-3',
-		  translateY: '-1000%',
+		  translateY: '-500%',
+		  height: {
+		    value: '+=200',
+		    duration: 7000,
+		    easing: 'easeInCirc'
+		  },
 		  easing: 'easeInOutQuart',
-		  duration: 3400,
-		  delay: 2500,
-		  direction: 'reverse'
+		  duration: 7000,
+		  direction: 'reverse',
+		  begin: function(anim) {
+		    setTimeout(function(){
+		      $('.rect-3').show()
+		    }, 100)
+		  }
 		});
 
 		var rect4 = anime({
 		  targets: '.rect-4',
-		  translateY: '-1200%',
-		  translateX: '1200%',
+		  translateY: '-500%',
+		  translateX: '500%',
 		  easing: 'easeInOutQuart',
-		  duration: 3600,
-		  delay: 3500,
-		  direction: 'reverse'
+		  height: {
+		    value: '+=200',
+		    duration: 8000,
+		    easing: 'easeInCirc'
+		  },
+		  width: {
+		    value: '+=200',
+		    duration: 8000,
+		    easing: 'easeInCirc'
+		  },
+		  duration: 7500,
+		  direction: 'reverse',
+		  begin: function(anim) {
+		    setTimeout(function(){
+		      $('.rect-4').show()
+		    }, 100)
+		  }
 		});
 
-	}, 143000)
+	}, 15400)
 
 	var ball = $("#ball");
 

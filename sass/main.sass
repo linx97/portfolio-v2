@@ -32,7 +32,7 @@ body
   position: absolute
   z-index: 800
   height: 100vh
-  background: #252525
+  background: #232323
   width: 30%
   color: #fff
   font-weight: bold
@@ -40,20 +40,40 @@ body
 .loading-screen:nth-of-type(2)
   width: 70%
   left: 30%
-  padding-left: 15%
+  padding-left: 10%
   padding-top: 40vh
+  p
+    width: 200px
+    text-align: center
 
 .loading-dots
-  animation-name: blink;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
+  animation-name: blink
+  animation-duration: 3s
+  animation-iteration-count: infinite
+  animation-fill-mode: both
 
 .loading-dots:nth-of-type(2)
   animation-delay: 1s
 
 .loading-dots:nth-of-type(3)
   animation-delay: 2s
+
+#progressbar
+  height: 7px
+  width: 200px
+  background: rgba(255, 255, 255, 0.9)
+  border-radius: 9px
+  margin-top: 30px
+
+#loading
+  transition: all 500ms ease
+  height: 7px
+  width: 200px
+  border-radius: 9px
+  background: $yellow
+  animation: progressbar 15s linear
+  position: absolute
+  display: inline-block
 
 .landing-holder
   position: relative
@@ -85,8 +105,8 @@ body
       position: absolute
       right: 0
       top: 5px
-      -webkit-clip-path: polygon(0 0, 0% 100%, 80% 50%) !important;
-      clip-path: polygon(0 0, 0% 100%, 80% 50%) !important;
+      -webkit-clip-path: polygon(0 0, 0% 100%, 80% 50%) !important
+      clip-path: polygon(0 0, 0% 100%, 80% 50%) !important
       animation: colors-three 11s infinite
       -webkit-transition: all 400ms ease-in
       -moz-transition: all 400ms ease-in
@@ -263,10 +283,27 @@ body
     fill: $yellow
 
 @keyframes blink 
-    0% 
-      opacity: .2;
-    20% 
-      opacity: 1;
-    100% 
-      opacity: .2;
+  0% 
+    opacity: .2
+  20% 
+    opacity: 1
+  100% 
+    opacity: .2
 
+@keyframes load
+  0%
+    width: 2%
+  10%
+    width: 10%
+
+@keyframes progressbar
+  0%   
+    width: 0
+    background-color: $yellow
+  16.5%  
+    background-color: $blue
+  82.5%  
+    background-color: $hot-pink
+  100%  
+    width: 100  
+    background-color: $yellow
