@@ -159,4 +159,26 @@ $(document).ready(function() {
 	  ball.css('left', xpos);
 	}
 
+	//////////////////////////////// WORK SECTION
+
+	$('#work').click(function(){
+		var loadingOne = anime({
+		  targets: '.work-screen.one',
+		  translateX: '-100%',
+		  easing: 'easeInSine',
+		  direction: 'reverse',
+		  duration: 3000,
+		  delay: 1000
+		});
+
+		var loadingOne = anime({
+		  targets: '.work-screen.two',
+		  translateX: '100%',
+		  easing: 'easeInSine',
+		  direction: 'reverse',
+		  duration: 4000,
+		  delay: 1000
+		});
+	});
+
 });
