@@ -213,38 +213,35 @@ body
   left: 70%
   transform: translateX(100%)
 
-.work-text, .work-img
-  display: none
-  padding: 140px 40px
-
-.work-text.active, .work-img.active 
-  display: block
-
 .work-img
   position: relative
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
   img
-    width: 100%
+    width: 80%
     z-index: 1000
   &:before
-    content: '';
-    width: 93%;
-    height: 70%;
-    clip-path: polygon(2% 100%, 0% 0%, 100% 5%);
-    animation: colors-three 11s infinite;
-    z-index: -1;
-    left: 20px;
-    top: 18%;
-    position: absolute;
+    content: ''
+    width: 86%
+    height: 70%
+    clip-path: polygon(2% 100%, 0% 0%, 100% 5%)
+    animation: colors-three 11s infinite
+    z-index: -1
+    left: 6%
+    top: 18%
+    position: absolute
   &:after
-    content: '';
-    width: 85%;
-    height: 42%;
-    clip-path: polygon(100% 0%, 0% 100%, 100% 75%);
-    animation: colors-five 11s infinite;
-    z-index: -1;
-    right: 20px;
-    top: 44%;
-    position: absolute;
+    content: ''
+    width: 70%
+    height: 42%
+    clip-path: polygon(99% 24%, 0% 97%, 100% 83%)
+    animation: colors-five 11s infinite
+    z-index: -1
+    right: 6%
+    top: 44%
+    position: absolute
 
 .work-text
   line-height: 1.4
